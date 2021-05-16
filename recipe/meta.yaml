@@ -1,5 +1,5 @@
 {% set name = "pyflct" %}
-{% set version = "0.2.2" %}
+{% set version = "0.2.2.post0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d516d95e899bd5ce140c229f4e3048a3cec2d89a6c41a0f93609b458c429cd58
+  sha256: 75b888618636d9ccd3bfbbbbec64a50414c582137d5aec7f93dfc7e3e8e1d17e
 
 build:
   number: 0
