@@ -19,14 +19,14 @@ requirements:
     - {{ compiler('c') }}
   host:
     - cython
-    - python >= 3.8
+    - python >=3.8
     - pip
     - numpy
     - fftw
     - extension-helpers
     - setuptools_scm
   run:
-    - python >= 3.8
+    - python >=3.8
     - {{ pin_compatible('numpy') }}
 
 test:
