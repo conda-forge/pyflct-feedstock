@@ -12,21 +12,21 @@ source:
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . -vv
-  skip: true  # [py<36]
+  skip: true  # [py<38]
 
 requirements:
   build:
-    - {{ compiler('c') }}
+    - {{ compiler('c') }}  # [not win]
   host:
     - cython
-    - python >=3.8
+    - python
     - pip
     - numpy
     - fftw
     - extension-helpers
     - setuptools_scm
   run:
-    - python >=3.8
+    - python
     - {{ pin_compatible('numpy') }}
 
 test:
