@@ -25,7 +25,9 @@ requirements:
     - numpy
     - fftw
     - extension-helpers
-    - setuptools_scm
+    - python_abi
+    - setuptools
+    - setuptools-scm
   run:
     - python
     - numpy
