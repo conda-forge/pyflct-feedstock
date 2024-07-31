@@ -16,14 +16,19 @@ build:
 
 requirements:
   build:
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - cython                                 # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
-    - {{ stdlib("c") }}
+    - {{ stdlib('c') }}
   host:
     - cython
     - python
     - pip
     - numpy
-    - fftw
+    - fftw  # [win]
+    - fftw-static  # [not win]
     - extension-helpers
     - setuptools
     - setuptools-scm
@@ -35,9 +40,6 @@ requirements:
 test:
   requires:
     - pytest
-  imports:
-    - pyflct
-    - pyflct.utils
   commands:
     - python -m pytest --pyargs pyflct
 
