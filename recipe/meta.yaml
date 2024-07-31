@@ -16,10 +16,9 @@ build:
 
 requirements:
   build:
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - cython                                 # [build_platform != target_platform]
-    - numpy                                  # [build_platform != target_platform]
+    - python
+    - cython
+    - numpy
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
   host:
@@ -27,8 +26,7 @@ requirements:
     - python
     - pip
     - numpy
-    - fftw  # [win]
-    - fftw-static  # [not win]
+    - fftw
     - extension-helpers
     - setuptools
     - setuptools-scm
